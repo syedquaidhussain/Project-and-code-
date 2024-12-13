@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  
+
+  <body>
+    
+    <div class="div" id = "first">
+
+        <div class ="nav-icons">
+
+     <!-- <p>icons</p> -->
+
+     <!-- heart -->
+     <!-- <svg enable-background="new 0 0 128 128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="m93.99 8.97c-21.91 0-29.96 22.39-29.96 22.39s-7.94-22.39-30-22.39c-16.58 0-35.48 13.14-28.5 43.01s58.56 67.08 58.56 67.08 51.39-37.21 58.38-67.08c6.98-29.87-10.56-43.01-28.48-43.01z" fill="#f44336"/><path d="m30.65 11.2c17.2 0 25.74 18.49 28.5 25.98.39 1.07 1.88 1.1 2.33.06l2.52-5.89c-3.55-11.34-13.31-22.38-29.97-22.38-6.9 0-14.19 2.28-19.86 7.09 5.01-3.29 10.88-4.86 16.48-4.86z" fill="#c33"/><path d="m93.99 8.97c-5.29 0-10.11 1.15-13.87 3.47 2.64-1.02 5.91-1.24 9.15-1.24 16.21 0 30.72 12.29 24.17 40.7-5.62 24.39-38.46 53.98-48.49 65.27-.64.72-.86 1.88-.86 1.88s51.39-37.21 58.38-67.08c6.98-29.86-10.53-43-28.48-43z" fill="#c33"/><g fill="#ff8a80"><path d="m17.04 24.82c3.75-4.68 10.45-8.55 16.13-4.09 3.07 2.41 1.73 7.35-1.02 9.43-4 3.04-7.48 4.87-9.92 9.63-1.46 2.86-2.34 5.99-2.79 9.18-.18 1.26-1.83 1.57-2.45.46-4.22-7.48-5.42-17.78.05-24.61z"/><path d="m77.16 34.66c-1.76 0-3-1.7-2.36-3.34 1.19-3.02 2.73-5.94 4.58-8.54 2.74-3.84 7.95-6.08 11.25-3.75 3.38 2.38 2.94 7.14.57 9.44-5.09 4.93-11.51 6.19-14.04 6.19z"/></g></svg> -->
+     <div class="icon-container">
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon wishlist-icon" viewBox="0 0 24 24">
+
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+
+      </svg>
+
+      <span  id = "wish" class="icon-counter">0</span>
+    </div>
+
+    
+     <!-- cart -->
+
+
+       <div class="icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon cart-icon" viewBox="0 0 24 24">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.84 14h8.91l.82-4H6.16l1.68 4zm-1.28-5h11.27l-1.8 9H6.2l-1.65-7.93L2 6H0V4h2l3.6 7.59L5.52 15h11.94l1.52-7H5.7l-.3-1z"/>
+        </svg>
+        <span id = "cart" class="icon-counter">0</span>
+      </div>
+      
+      
+    </div>
+    
+
+        <div class="search-bar"> 
+          
+          <div>
+
+            
+            <span>Search</span>
+            <input type="search-item" name="searched-item" id="input-product" oninput="searchProduct(event)">
+            
+          </div>
+
+        <div id ="categories-list">
+
+          <label for="categories">Choose a category:</label>
+          <!-- categoriesList filter -->
+          <select id="categories" name="categories" onchange=getSelectedValue()>
+            <!-- dynamiccaly  -->
+          </select> 
+          
+        </div>
+        
+      </div>   
+
+        <div>
+
+
+        <!-- containing products dynamically -->
+        <div class="div" id="second">
+           
+    </div>
+
+
+    <!-- div for offset -> showing this out of this result  dynamically--> 
+     <div class = "pagination-container">
+
+       <div class = "offset">
+         
+      </div>
+      
+      <div class="pagination">
+        <button class="page-btn" id="prev" onclick="updatePagination(-1,1)">Prev</button>
+        <div class="page-numbers " id="pageNumbers">
+          <button class="page-btn page-rep" id ="1" onclick="getProductByPagination(1)">1</button>
+          <button class="page-btn page-rep" id ="2" onclick="getProductByPagination(2)">2</button>
+          <span id="dots">........</span>
+          <button class="page-btn page-rep" id ="9" onclick="getProductByPagination(9)">9</button>
+          <button class="page-btn  page-rep" id ="10" onclick="getProductByPagination(10)">10</button>
+        </div>
+        <button class="page-btn" id="next" onclick="updatePagination(1,1)">Next</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
